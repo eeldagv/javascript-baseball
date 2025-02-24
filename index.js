@@ -113,11 +113,11 @@ function getAverage() {
     return min;
   }, gameRecords[0]);
   let maxRecord = gameRecords.reduce((max, game) => {
-    if (game.attempt > maxRecord.attempt) {
+    if (game.attempt > max.attempt) {
       return game;
     }
     return max;
-  });
+  }, gameRecords[0]);
   let totalAttempts = gameRecords.reduce((sum, game) => sum + game.attempt, 0);
   let attemptsAverage = totalAttempts / gameRecords.length;
   console.log(`가장 적은 횟수: ${minRecord.attempt}회 - [${minRecord.gameNo}]`);
